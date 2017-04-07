@@ -13,13 +13,13 @@ save DoorModelTrained.mat Theta1 Theta2 -7
 %X_Training = Img(1:800, :);    % training set
 
 % load image to check
-%fname = 'test_image.png';
-%tmp = imread(fname);
-%X_test = double (tmp);
-%X_test = reshape(X_test, 1, []);
+fname = 'test_image.png';
+tmp = imread(fname);
+X_test = double (tmp);
+X_test = reshape(X_test, 1, []);
 
 % compute the training set accuracy
-%pred = predict(Theta1, Theta2, X_test);
+pred = predict(Theta1, Theta2, X_test);
 %pred_test = predict(Theta1, Theta2, X_Test);
 %pred_train = predict(Theta1, Theta2, X_Training);
 
@@ -38,10 +38,10 @@ save DoorModelTrained.mat Theta1 Theta2 -7
 %err_test = err_test/500;
 %err_train = err_train/800;
 
-%if (pred(1) == 1)
-%    fprintf('\ntest Image prediction: Door is Closed\n');
-%else
-%    fprintf('\ntest Image prediction: Door is Opened\n');
-%end
+if (pred(1) == 1)
+    fprintf('\ntest Image prediction: Door is Closed\n');
+else
+    fprintf('\ntest Image prediction: Door is Opened\n');
+end
 %fprintf('\ntest set Accuracy: %f\n', double(err_test));
 %fprintf('\ntraining set Accuracy: %f\n', double(err_train));
